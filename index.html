@@ -29,42 +29,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        section {
-            margin: 50px auto;
-            max-width: 900px;
-        }
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #f0e68c;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            color: #ffffff;
-        }
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        a {
-            color: #f0e68c;
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: transform 0.3s ease, text-shadow 0.3s ease;
-        }
-        a:hover {
-            transform: scale(1.1);
-            text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
-        }
-        a img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-        }
         footer {
             background-color: #333333;
             color: #ccc;
@@ -74,133 +38,56 @@
             width: 100%;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
         }
-        .button-class {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 12px 24px;
-            background-color: #4b4b4b;
-            color: #f0e68c;
-            text-decoration: none;
-            font-size: 1.5em;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease-in-out;
-            border: 2px solid #f0e68c;
-        }
-        .button-class:hover {
-            transform: scale(1.1);
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
-            background-color: #333333;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.6);
-        }
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            z-index: 1000;
-        }
-        .cookie-banner button {
-            background-color: #f0e68c;
-            color: #333;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .cookie-banner button:hover {
-            background-color: #fff;
-        }
-        .ads {
-            margin-top: 30px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #4b4b4b;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
     </style>
 </head>
 <body>
-    <!-- Cookie consent banner -->
-    <div class="cookie-banner" id="cookie-banner">
-        Ce site utilise des cookies pour améliorer l'expérience utilisateur. <br>
-        <button onclick="acceptCookies()">Accepter</button>
-    </div>
-
     <header>
         <h1>Nass_LHR - Les INFORMABean's !!</h1>
     </header>
 
     <section>
         <h2>Bienvenue sur mon site !</h2>
-        <p>
-            Je suis Nass_LHR, connue aussi sous le pseudo Mme Bean sur TikTok. Mon contenu est surtout centré autour de Call of Duty: Warzone, où je partage des moments épiques de gameplay et des stratégies. Parfois, c’est du pur fun, comme dans mes vidéos où, malgré un chargeur vidé sur l’ennemi, je finis éliminée en deux balles. Vous voyez le genre !
-        </p>
-        <p>
-            Sur Twitch, je streame mes parties en direct et interagis avec vous en temps réel. Vous pouvez discuter avec moi pendant que je joue, et ensemble on partage des moments de rage ou de victoire. Rejoignez-moi pour des sessions de jeu, des discussions et des échanges entre passionnés !
-        </p>
-
-        <div class="links">
-            <a href="https://www.twitch.tv/Nass_LHR" target="_blank">
-                <img src="https://i.imgur.com/9rZgDDr.png" alt="Twitch Icon">
-                Twitch
-            </a>
-            <a href="https://www.tiktok.com/@nass.lhr" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok Icon">
-                TikTok
-            </a>
-            <a href="https://discord.gg/ANWxYPUanN" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Icon">
-                Discord
-            </a>
-        </div>
-
-        <!-- Bouton pour Classes Warzone -->
-        <a href="classes.html" class="button-class">Mes Classes</a>
-
-        <!-- Publicité aléatoire -->
-        <div class="ads" id="ads"></div>
+        <p>Le contenu de mon site...</p>
     </section>
 
     <footer>
         © 2024 Nass_LHR | Tous droits réservés
     </footer>
 
+    <!-- Script JavaScript pour cookies et publicités aléatoires -->
     <script>
-        // Cookies management
-        function acceptCookies() {
-            document.getElementById('cookie-banner').style.display = 'none';
-            localStorage.setItem('cookiesAccepted', 'true');
+        // Code des cookies (à intégrer)
+        if (document.cookie.indexOf('cookies_accepted=true') === -1) {
+            var cookieBanner = document.createElement('div');
+            cookieBanner.style.position = 'fixed';
+            cookieBanner.style.bottom = '0';
+            cookieBanner.style.left = '0';
+            cookieBanner.style.width = '100%';
+            cookieBanner.style.backgroundColor = '#333';
+            cookieBanner.style.color = 'white';
+            cookieBanner.style.textAlign = 'center';
+            cookieBanner.style.padding = '10px';
+            cookieBanner.innerHTML = 'Ce site utilise des cookies pour améliorer votre expérience. <button id="acceptCookies">Accepter</button>';
+            document.body.appendChild(cookieBanner);
+
+            document.getElementById('acceptCookies').onclick = function() {
+                document.cookie = "cookies_accepted=true; max-age=31536000"; // Cookie valable pendant un an
+                document.body.removeChild(cookieBanner);
+            };
         }
 
-        if (!localStorage.getItem('cookiesAccepted')) {
-            document.getElementById('cookie-banner').style.display = 'block';
-        } else {
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-
-        // Publicités aléatoires
-        const ads = [
-            'Annonce 1 : Rejoignez mon stream sur Twitch !',
-            'Annonce 2 : Découvrez mes dernières vidéos sur TikTok !',
-            'Annonce 3 : Discutez avec moi en direct sur Discord !'
+        // Code pour afficher une publicité aléatoire (à intégrer)
+        var ads = [
+            '<a href="https://www.advertiser1.com" target="_blank"><img src="ad1.jpg" alt="Pub 1"></a>',
+            '<a href="https://www.advertiser2.com" target="_blank"><img src="ad2.jpg" alt="Pub 2"></a>',
+            '<a href="https://www.advertiser3.com" target="_blank"><img src="ad3.jpg" alt="Pub 3"></a>'
         ];
-
-        function displayRandomAd() {
-            const randomIndex = Math.floor(Math.random() * ads.length);
-            document.getElementById('ads').textContent = ads[randomIndex];
-        }
-
-        displayRandomAd();
+        var randomAd = ads[Math.floor(Math.random() * ads.length)];
+        var adContainer = document.createElement('div');
+        adContainer.style.textAlign = 'center';
+        adContainer.style.marginTop = '20px';
+        adContainer.innerHTML = randomAd;
+        document.body.appendChild(adContainer);
     </script>
 </body>
 </html>
