@@ -93,9 +93,35 @@
             background-color: #333333;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.6);
         }
-        .button-class:active {
-            background-color: #292929;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.4);
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .cookie-banner button {
+            background-color: #f0e68c;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .cookie-banner button:hover {
+            background-color: #fff;
+        }
+        .ads {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #4b4b4b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
         }
         @keyframes fadeIn {
             0% { opacity: 0; }
@@ -104,6 +130,12 @@
     </style>
 </head>
 <body>
+    <!-- Cookie consent banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        Ce site utilise des cookies pour améliorer l'expérience utilisateur. <br>
+        <button onclick="acceptCookies()">Accepter</button>
+    </div>
+
     <header>
         <h1>Nass_LHR - Les INFORMABean's !!</h1>
     </header>
@@ -116,7 +148,7 @@
         <p>
             Sur Twitch, je streame mes parties en direct et interagis avec vous en temps réel. Vous pouvez discuter avec moi pendant que je joue, et ensemble on partage des moments de rage ou de victoire. Rejoignez-moi pour des sessions de jeu, des discussions et des échanges entre passionnés !
         </p>
-        
+
         <div class="links">
             <a href="https://www.twitch.tv/Nass_LHR" target="_blank">
                 <img src="https://i.imgur.com/9rZgDDr.png" alt="Twitch Icon">
@@ -134,10 +166,41 @@
 
         <!-- Bouton pour Classes Warzone -->
         <a href="classes.html" class="button-class">Mes Classes</a>
+
+        <!-- Publicité aléatoire -->
+        <div class="ads" id="ads"></div>
     </section>
 
     <footer>
         © 2024 Nass_LHR | Tous droits réservés
     </footer>
+
+    <script>
+        // Cookies management
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        } else {
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        // Publicités aléatoires
+        const ads = [
+            'Annonce 1 : Rejoignez mon stream sur Twitch !',
+            'Annonce 2 : Découvrez mes dernières vidéos sur TikTok !',
+            'Annonce 3 : Discutez avec moi en direct sur Discord !'
+        ];
+
+        function displayRandomAd() {
+            const randomIndex = Math.floor(Math.random() * ads.length);
+            document.getElementById('ads').textContent = ads[randomIndex];
+        }
+
+        displayRandomAd();
+    </script>
 </body>
 </html>
