@@ -13,29 +13,60 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
-            text-align: center;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 100vh;
         }
+
         header {
             background-color: #000000;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 100%;
         }
+
         header h1 {
             color: #f0e68c;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
+        .menu {
+            width: 25%;
+            background-color: #2c2c2c;
+            padding: 20px;
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .menu button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu button:hover {
+            background-color: #555;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
         footer {
             background-color: #333333;
             color: #ccc;
             padding: 15px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            text-align: center;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
         }
     </style>
@@ -45,49 +76,19 @@
         <h1>Nass_LHR - Les INFORMABean's !!</h1>
     </header>
 
-    <section>
-        <h2>Bienvenue sur mon site !</h2>
-        <p>Le contenu de mon site...</p>
-    </section>
+    <div class="menu">
+        <button>Accueil</button>
+        <button>À propos</button>
+        <button>Projets</button>
+        <button>Contact</button>
+        <button>Blog</button>
+    </div>
 
-    <footer>
-        © 2024 Nass_LHR | Tous droits réservés
-    </footer>
+    <div class="content">
+        <section>
+            <h2>Bienvenue sur mon site !</h2>
+            <p>Le contenu de mon site...</p>
+        </section>
+    </div>
 
-    <!-- Script JavaScript pour cookies et publicités aléatoires -->
-    <script>
-        // Code des cookies (à intégrer)
-        if (document.cookie.indexOf('cookies_accepted=true') === -1) {
-            var cookieBanner = document.createElement('div');
-            cookieBanner.style.position = 'fixed';
-            cookieBanner.style.bottom = '0';
-            cookieBanner.style.left = '0';
-            cookieBanner.style.width = '100%';
-            cookieBanner.style.backgroundColor = '#333';
-            cookieBanner.style.color = 'white';
-            cookieBanner.style.textAlign = 'center';
-            cookieBanner.style.padding = '10px';
-            cookieBanner.innerHTML = 'Ce site utilise des cookies pour améliorer votre expérience. <button id="acceptCookies">Accepter</button>';
-            document.body.appendChild(cookieBanner);
-
-            document.getElementById('acceptCookies').onclick = function() {
-                document.cookie = "cookies_accepted=true; max-age=31536000"; // Cookie valable pendant un an
-                document.body.removeChild(cookieBanner);
-            };
-        }
-
-        // Code pour afficher une publicité aléatoire (à intégrer)
-        var ads = [
-            '<a href="https://www.advertiser1.com" target="_blank"><img src="ad1.jpg" alt="Pub 1"></a>',
-            '<a href="https://www.advertiser2.com" target="_blank"><img src="ad2.jpg" alt="Pub 2"></a>',
-            '<a href="https://www.advertiser3.com" target="_blank"><img src="ad3.jpg" alt="Pub 3"></a>'
-        ];
-        var randomAd = ads[Math.floor(Math.random() * ads.length)];
-        var adContainer = document.createElement('div');
-        adContainer.style.textAlign = 'center';
-        adContainer.style.marginTop = '20px';
-        adContainer.innerHTML = randomAd;
-        document.body.appendChild(adContainer);
-    </script>
-</body>
-</html>
+    <foot
