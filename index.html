@@ -13,14 +13,21 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
+            text-align: center;
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
         header {
             background-color: #000000;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
         }
 
@@ -28,16 +35,38 @@
             color: #f0e68c;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-icon.open {
+            transform: rotate(45deg);
         }
 
         .menu {
-            width: 25%;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 250px;
+            height: 100%;
             background-color: #2c2c2c;
+            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.3);
             padding: 20px;
-            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
-            overflow-y: auto;
+            align-items: start;
+            gap: 15px;
+            transition: right 0.3s ease;
+        }
+
+        .menu.open {
+            right: 0;
         }
 
         .menu button {
@@ -45,20 +74,19 @@
             color: white;
             border: none;
             padding: 15px;
-            margin-bottom: 10px;
-            text-align: left;
             font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: left;
         }
 
         .menu button:hover {
             background-color: #555;
         }
 
-        .content {
-            flex: 1;
+        section {
             padding: 20px;
         }
 
@@ -67,6 +95,9 @@
             color: #ccc;
             padding: 15px;
             text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
         }
     </style>
@@ -74,25 +105,35 @@
 <body>
     <header>
         <h1>Nass_LHR - Les INFORMABean's !!</h1>
+        <div id="menuIcon" class="menu-icon">☰</div>
     </header>
 
-    <div class="menu">
-        <button>Accueil</button>
-        <button>À propos</button>
-        <button>Projets</button>
-        <button>Contact</button>
-        <button>Blog</button>
+    <!-- Menu défilant -->
+    <div id="menu" class="menu">
+        <button onclick="alert('Accueil sélectionné')">Accueil</button>
+        <button onclick="alert('À propos sélectionné')">À propos</button>
+        <button onclick="alert('Projets sélectionné')">Projets</button>
     </div>
 
-    <div class="content">
-        <section>
-            <h2>Bienvenue sur mon site !</h2>
-            <p>Le contenu de mon site...</p>
-        </section>
-    </div>
+    <!-- Contenu principal -->
+    <section>
+        <h2>Bienvenue sur mon site !</h2>
+        <p>Le contenu de mon site...</p>
+    </section>
 
     <footer>
         © 2024 Nass_LHR | Tous droits réservés
     </footer>
+
+    <script>
+        const menu = document.getElementById('menu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            menuIcon.classList.toggle('open');
+            menuIcon.textContent = menu.classList.contains('open') ? '✖' : '☰';
+        });
+    </script>
 </body>
 </html>
