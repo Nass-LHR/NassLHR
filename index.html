@@ -30,13 +30,26 @@
         }
 
         header h1 {
-            background: linear-gradient(90deg, #000000, #8a2be2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #8a2be2;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 0;
             font-size: 24px;
+        }
+
+        /* Bouton menu */
+        .menu-button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-button.open {
+            transform: rotate(45deg);
         }
 
         /* Contenu principal */
@@ -92,5 +105,16 @@
     <footer>
         © 2024 Nass_LHR | Tous droits réservés
     </footer>
+    
+    <script>
+        // Gestion du menu déroulant
+        const menu = document.getElementById('menu');
+        const menuToggle = document.getElementById('menuToggle');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
